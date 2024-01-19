@@ -415,43 +415,6 @@ Your script must always be able to display the following information:<br/>
 • The IPv4 address of your server and its MAC (Media Access Control) address.<br/>
 • The number of commands executed with the sudo program.
 
-### this is my script :
-
-#!/usr/bin/bash
-
-# system information
-arc=$(uname -a)                             # Get system architecture
-pcpu=$(cat /proc/cpuinfo | grep "cpu cores" | awk '{print $4}')  # The number of  physical CPUs
-vcpu=$(nproc)                 # The number of virtual CPUs
-fram=$(free --mega | awk '$1 == "Mem:" {print $2}')                 # Total RAM in MB
-uram=$(free --mega | awk '$1 == "Mem:" {print $3}')                 # Used RAM in MB
-pram=$(free | awk '$1 == "Mem:" {printf("%.2f"), $3/$2*100}')   # RAM usage percentage
-fdisk=$(df -Bg | grep '^/dev/' | grep -v '/boot$' | awk '{ft += $2} END {print ft}')  # Total disk space in GB
-udisk=$(df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} END {print ut}')  # Used disk space in MB
-pdisk=$(df -Bm | grep '^/dev/' | grep -v '/boot$' | awk '{ut += $3} {ft+= $2} END {printf("%d"), ut/ft*100}')  # Disk usage percentage
-cpul=$(mpstat | grep all | awk '{printf("%.1f%%"), 100-$13}')  # CPU load percentage
-lb=$(who -b | awk '$1 == "system" {print $3 " " $4}')  # Time of Last system boot
-lvmu=$(if [ $(lsblk | grep lvm | wc -l) -eq 0 ]; then echo no; else echo yes; fi)  # Check if LVM is in use
-ctcp=$(netstat -ant | grep "ESTABLISHED" | wc -l)  # The number of established TCP connections
-ulog=$(who | cut -d " " -f1 | sort -u | wc -w)  # the number of logged-in users
-ip=$(hostname -I)  # IP address
-mac=$(ip link show | grep 'link/ether' | awk '{print $2}')  # the MAC address of the system
-cmds=$(journalctl _COMM=sudo -q | grep COMMAND | wc -l)  # The number commands that executed with sudo
-
-wall "
-  #Architecture: $arc
-  #CPU physical: $pcpu
-  #vCPU: $vcpu
-  #Memory Usage: $uram/${fram}MB ($pram%)
-  #Disk Usage: $udisk/${fdisk}Gb ($pdisk%)
-  #CPU load: $cpul
-  #Last boot: $lb
-  #LVM use: $lvmu
-  #Connexions TCP: $ctcp ESTABLISHED
-  #User log: $ulog
-  #Network: IP $ip ($mac)
-  #Sudo: $cmds cmd"
-
 ## Bonus
 
 ### #1: Installation
