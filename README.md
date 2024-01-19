@@ -39,10 +39,6 @@ This project aims to introduce you to the wonderful world of virtualization. You
        - [Step 4: Downloading & Configuring WordPress](#step-4-downloading--configuring-wordpress)
        - [Step 5: Configuring Lighttpd](#step-5-configuring-lighttpd)
 
-8. [Submission and peer-evaluation for 1337/42 Students](#peereval)
-
-9. [evalknowledge.txt](#evalknowledge)
-
 ## Introduction
 You will create your first machine in VirtualBox (or UTM if you can’t use VirtualBox) under specific instructions. Then, at the end of this project, you will be able to set up your own operating system while implementing strict rules.
 
