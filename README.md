@@ -38,9 +38,6 @@ This project aims to introduce you to the wonderful world of virtualization. You
        - [Step 3: Installing PHP](#step-3-installing-php)
        - [Step 4: Downloading & Configuring WordPress](#step-4-downloading--configuring-wordpress)
        - [Step 5: Configuring Lighttpd](#step-5-configuring-lighttpd)
-    - [File Transfer Protocol *(FTP)*](#3-file-transfer-protocol-ftp)
-       - [Step 1: Installing & Configuring FTP](#step-1-installing--configuring-ftp)
-       - [Step 2: Connecting to Server via FTP](#step-2-connecting-to-server-via-ftp)
 
 8. [Submission and peer-evaluation for 1337/42 Students](#peereval)
 
