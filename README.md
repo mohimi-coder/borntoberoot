@@ -1,4 +1,10 @@
-# borntoberoot
+<h1 align="center">borntoberoot_42 _ 1337 </h1>
+<p align="center">
+  <a href="https://github.com//mohimi-coder/borntoberoot">
+    <img src="https://raw.githubusercontent.com/mohimi-coder/1337_badges/refs/heads/master/born2berootm.png" alt="42 Badge">
+  </a>
+</p>
+
 This project aims to introduce you to the wonderful world of virtualization. You will create your first machine in VirtualBox (or UTM if you can’t use VirtualBox) under specific instructions. Then, at the end of this project, you will be able to set up your own operating system while implementing strict rules.
 
 ## Table of Contents
